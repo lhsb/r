@@ -20,7 +20,7 @@ no.resp.2 <- 7980 # no-success (no-response on treatment) in the group 2
 (log.rr.ci <- log.risk.ratio + c(-2,2) * SE) # CI95 for log.risk.ratio
 (rr.ci <- exp(log.rr.ci)) # CI95 for risk.ratio; is significant if complete interval is > 1 or < 1
 cat("Interpretation of the risk ratio CI95:\nGroup 1 has",(risk.ratio - 1) * 100,
-    '% (+ ... greater, - ... lower) risk of success than group 2. These resutls estimate that this (increase/descrease) risk could be between',
+    '% (+ ... greater, - ... lower) risk of success than group 2. These resutls estimate that this (increased/descreased) risk could be between',
     (rr.ci - 1) * 100,'%')
 
 # Let's estimate 95CI for odds ratio
@@ -31,7 +31,7 @@ cat("Interpretation of the risk ratio CI95:\nGroup 1 has",(risk.ratio - 1) * 100
 (or.ci <- exp(log.or.ci)) # CI95 for or.ci; is significant if complete interval is > 1 or < 1
 
 cat('Interpretation of the odds ratio CI95:\nAt the time of starting therapy group 1 has',(odds.ratio - 1) * 100,
-    '% (+ ... greater, - ... lower) odds of success (responding to the therapy) compared to group 2. These results esptimate that his (increase/decrease) in success (response) odds could be between',
+    '% (+ ... greater, - ... lower) odds of success (responding to the therapy) compared to group 2. These results esptimate that this (increase/decrease) in success (response) odds could be between',
     (or.ci - 1) * 100,'%')
 
 # Estimates of ci95 in % - recap
