@@ -1,12 +1,20 @@
 ## Compare two groups - their proportion of success (or response on treatment)
 
-resp.1 <- 163     # success (response on treatment) in the group 1
-no.resp.1 <- 8345 # no-success (no-response on treatment) in the group 1
-resp.2 <- 122     # success (response on treatment) in the group 2
-no.resp.2 <- 7980 # no-success (no-response on treatment) in the group 2
+resp.1 <- 150          # success (response on treatment) in the group 1
+no.resp.1 <- 262 - 150 # no-success (no-response on treatment) in the group 1
+resp.2 <- 83           # success (response on treatment) in the group 2
+no.resp.2 <- 134 - 83  # no-success (no-response on treatment) in the group 2
 
 (p.hat1 <- resp.1 / (resp.1 + no.resp.1)) # proportion of success of the group 1
 (p.hat2 <- resp.2 / (resp.2 + no.resp.2)) # proportion of success of the group 2
+
+# Let's estimate 95% confidence interval for individual groups
+# This quantity estimates the potential variability in the sample proportion across multiple random samples size n1 all taken from the population of the group1.
+(SE.p.hat1 <- sqrt(p.hat1 * (1 - p.hat1) / (resp.1 + no.resp.1)))
+(ci95.p.hat1 <- p.hat1 + c(-2,2) * SE.p.hat1) # 95ci for p.hat1
+# This quantity estimates the potential variability in the sample proportion across multiple random samples size n1 all taken from the population of the group2.
+(SE.p.hat2 <- sqrt(p.hat2 * (1 - p.hat2) / (resp.2 + no.resp.2)))
+(ci95.p.hat2 <- p.hat2 + c(-2,2) * SE.p.hat2) # 95ci for p.hat2
 
 # Let's estimate 95% confidence interval for the risk difference
 (attributable.risk <- p.hat1 - p.hat2) # risk difference
