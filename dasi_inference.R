@@ -157,7 +157,7 @@ success.failure.condition(n, p)
 # R.squared = percentage of the variability in the response variable explained by the the explanatory variable
 # sqrt(R.squared) = correlation coefficient - careful with sign
 
-# R.squared.adj = 1 - SSE/(n - k - 1) / SST/(n - 1)
+# R.squared.adj = 1 - SSE/(n - k - 1) / (SST/(n - 1))
 # applies a penalty for the number of predictors included in the regression model.
 # Suppose you have performed forward selection using adjusted R2 as the criterion and have chosen a model with 6 predictors. Your final model has a higher adjusted R2 than any of the smaller models you tried.
 
@@ -243,4 +243,3 @@ us <- subset(atheism, nationality == 'United States')
 # Difference between two proportions grouped by variable year
 inference(us$response, us$year, est='proportion', type='ci', method='theoretical', success='atheist')
 # check confidence interval
-# There is convincing evidence that Spain has seen a change in its atheism index between 2005 and 2012.
