@@ -1,3 +1,6 @@
+# My NOTES from
+# https://www.coursera.org/course/statistics
+
 # numerical discrete  ... whole non divided count (number of siblings)
 
 # randomly assign ... causation
